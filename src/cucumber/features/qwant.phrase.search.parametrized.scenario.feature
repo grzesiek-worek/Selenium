@@ -4,6 +4,8 @@ Feature: Qwant phrase search
     When Phrase "<searchPhrase>" entered in search input box
     And Search button clicked
     Then First <howManyResultsCheck> results link texts contain phrase "<lookupPhrase>"
+    Then Save Screenshot
+    Then Close browser
 
     Examples:
       | searchPhrase      | lookupPhrase    | howManyResultsCheck |

@@ -56,4 +56,21 @@ public class QwantSearchCucumberSteps {
             }
         }
     }
+
+    @Then("Close browser")
+    public void closeBrowser() {
+        driver.quit();
+    }
+
+    @Then("Save Screenshot")
+    public void takeScreenshot() throws IOException {
+        //Take screenshot (will be saved in default location) and automatically removed after test
+        File tmpScreenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        //Copy the screenshot to desired location
+        //Path to the location to save screenshot
+        //(directory for screenshots MUST exist: D:\_git\test-evidence) e.g.:
+        String currentDateTime = LocalDateTime.now().toString().replaceAll(":", "_");
+        // new three classes that we use below: Files, Path, Paths
+        Files.copy(tmpScreenshot.toPath(), Paths.get("D:","_git", "test-evidence", "qwant-search-"+currentDateTime+".png"));
+    }
 }
