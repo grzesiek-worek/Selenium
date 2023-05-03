@@ -31,7 +31,8 @@ public class QwantSearchCucumberSteps {
         this.driver.get(pageUrl);
     }
 
-    @When("Phrase {string} entered in search input box")
+    @When("^Phrase \"(.*)\" entered in search input box$") // use REGEX to match parameters
+    // @When("Phrase {string} entered in search input box")
     public void phrase_entered_in_search_input_box(String searchPhrase) {
         QwantMainPage mainPage = new QwantMainPage(driver);
         mainPage.enterSearchPhrase(searchPhrase);
