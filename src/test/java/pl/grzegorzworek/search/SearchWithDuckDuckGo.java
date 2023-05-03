@@ -6,11 +6,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.time.Duration;
+
 public class SearchWithDuckDuckGo {
     @Test
     public void searchWithDuckDuckGo() {
         System.setProperty("webdriver.chrome.driver","src/test/resources/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(16));
         driver.get("https://duckduckgo.com/");
         WebElement searchInput = driver.findElement(By.id("search_form_input_homepage"));
         searchInput.sendKeys("W pustyni i w puszczy");
