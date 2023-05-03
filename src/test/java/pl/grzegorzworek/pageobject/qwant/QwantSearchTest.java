@@ -23,5 +23,6 @@ public class QwantSearchTest {
         String phraseToSearch = "May day weather";
         QwantMainPage mainPage = new QwantMainPage(driver);
         mainPage.enterSearchPhrase(phraseToSearch);
+        mainPage.clickSearchButton();
     }
 }
