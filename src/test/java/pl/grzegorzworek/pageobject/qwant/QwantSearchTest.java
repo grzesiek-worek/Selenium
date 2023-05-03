@@ -20,7 +20,8 @@ public class QwantSearchTest {
 
     @Test
     public void successfulMainPagePhraseSearch() {
-        String phraseToSearch = "Pogoda na majówkę";
+        String phraseToSearch = "May day weather";
         QwantMainPage mainPage = new QwantMainPage(driver);
+        mainPage.enterSearchPhrase(phraseToSearch);
     }
 }
