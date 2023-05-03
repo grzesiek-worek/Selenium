@@ -11,3 +11,16 @@ Automation Testing - Tasks using: Java, Selenium, WebDriver, JUnit, Gherkin and 
 ## Tasks description:
 ### **...Repository in progress...**
 
+Examples:
+* Assertions example
+* JUnit example
+* List example
+
+Page Object:
+* Qwant (Selenium, JUnit, Page Factory)
+* Qwant Cucumber - two version (Selenium, JUnit, Cucumber: Scenario and Scenario Outline, Page Object)
+
+
+Search (Selenium, JUnit):
+* Search with Google
+* Search with DuckDuckGo
