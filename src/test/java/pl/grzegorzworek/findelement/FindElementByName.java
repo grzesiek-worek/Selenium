@@ -1,2 +1,44 @@
-package pl.grzegorzworek.findelement;public class FindElementByName {
+package pl.grzegorzworek.findelement;
+
+import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.time.Duration;
+
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+public class FindElementByName {
+    @Test
+    public void FillContactFormHotel() {
+        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(16));
+
+        driver.get("https://www.hotelstok.pl/kontakt/hotel-stok-wisla");
+
+        // Fill contact form, but don't send spam message to the hotel inbox
+        WebElement firstnameContactInput = driver.findElement(By.name("FirstName"));
+        assertNotNull(firstnameContactInput);
+        firstnameContactInput.sendKeys("Jack");
+
+        WebElement lastnameContactInput = driver.findElement(By.name("LastName"));
+        assertNotNull(lastnameContactInput);
+        lastnameContactInput.sendKeys("Strong");
+
+        WebElement emailContactInput = driver.findElement(By.name("Email"));
+        assertNotNull(emailContactInput);
+        emailContactInput.sendKeys("contact@test.pl");
+
+        WebElement phoneContactInput = driver.findElement(By.name("Phone")); // optional field
+        phoneContactInput.sendKeys("123456789");
+
+        WebElement MessageContactTextArea = driver.findElement(By.name("SubmitMessage"));
+        assertNotNull(MessageContactTextArea);
+        MessageContactTextArea.sendKeys("Room reservation");
+
+        driver.quit();
+    }
 }
