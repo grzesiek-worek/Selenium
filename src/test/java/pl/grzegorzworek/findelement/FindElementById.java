@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class FindElementById {
     @Test
-    public void searchMyBookingHotel() {
+    public void FillContactFormHotel() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(16));
@@ -39,6 +39,6 @@ public class FindElementById {
         assertNotNull(MessageContactTextArea);
         MessageContactTextArea.sendKeys("Room reservation");
 
-        driver.quit();
+        //driver.quit();
     }
 }
