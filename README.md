@@ -18,7 +18,14 @@ Examples:
 * JUnit example
 * List example
 
-Page Object:
+Find Element examples:
+* By.id (Hotel - fill contact form)
+* By.name (Hotel - fill contact form)
+* By.className (search news in Interia)
+* By.XPath (create account in Modivo shop)
+* By.CssSelector (create account in Modivo shop)
+
+Page Object Pattern / Page Factory:
 * Qwant search (Selenium, JUnit, Page Factory)
 * Qwant search Cucumber - two version (Selenium, JUnit, Cucumber: Scenario and Scenario Outline, Page Object)
 
